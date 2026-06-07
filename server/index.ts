@@ -32,10 +32,10 @@ app.use(express.json())
 app.use('/uploads', express.static(UPLOADS_PATH))
 
 // Serve static files from Vite build in production
-const DIST_PATH = path.join(__dirname, '../dist')
-if (fs.existsSync(DIST_PATH)) {
-  app.use(express.static(DIST_PATH))
-}
+const DIST_PATH = path.resolve(__dirname, '../dist')
+console.log('Serving static files from:', DIST_PATH)
+
+app.use(express.static(DIST_PATH))
 
 // Serve config to frontend
 app.get('/api/config', (req, res) => {
@@ -45,6 +45,12 @@ app.get('/api/config', (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to read config' })
   }
+})
+
+// Handle all other routes for SPA
+app.get('*', (req, res) => {
+  if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) return
+  res.sendFile(path.join(DIST_PATH, 'index.html'))
 })
 
 // Update config (admin use)
