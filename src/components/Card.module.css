@@ -1,0 +1,144 @@
+.card {
+  width: 500px;
+  max-width: calc(100vw - 40px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 28px;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.topSection {
+  padding: 40px 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.avatarSection {
+  margin-bottom: 20px;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 35px; /* Squircle look */
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.avatarRing {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 40px;
+  border: 2px solid var(--accent, #fff);
+  opacity: 0.2;
+  z-index: 1;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.content {
+  width: 100%;
+}
+
+.name {
+  font-family: var(--font-display), 'Syne', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #fff;
+  letter-spacing: -0.03em;
+  background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bio {
+  font-family: var(--font-body), 'DM Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.middleSection {
+  padding: 0 30px;
+  width: 100%;
+}
+
+.lanyardGroup {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 8px 18px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s ease;
+}
+
+.lanyardSeparator {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 4px 0;
+}
+
+.bottomSection {
+  padding: 20px 30px 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.views {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+    border-radius: 0;
+    min-height: 100vh;
+    border: none;
+    background: rgba(10, 10, 10, 0.9) !important;
+  }
+}

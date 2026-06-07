@@ -1,0 +1,40 @@
+{
+  "discord_id": "1035493314406928477",
+  "name": "TBSkyen",
+  "bio": "Guitarist ~ Programmer ~ Unity Developer",
+  "avatar": "https://i.pinimg.com/1200x/8c/03/2e/8c032e8692085acf11104f8af4c80fd7.jpg",
+  "background": {
+    "type": "video",
+    "value": "/uploads/1780844530556-195240028.mp4",
+    "blur": true,
+    "overlay_opacity": 0.45
+  },
+  "theme": {
+    "card_blur": 18,
+    "card_opacity": 0.55,
+    "accent_color": "#ffffff",
+    "font_display": "Syne",
+    "font_body": "DM Mono"
+  },
+  "socials": [
+    {
+      "platform": "discord",
+      "icon": "discord",
+      "url": "https://discord.com/users/1035493314406928477"
+    },
+    {
+      "platform": "github",
+      "icon": "github",
+      "url": "https://github.com/TBSkyen"
+    }
+  ],
+  "music": {
+    "url": "/uploads/1780844621984-921001061.mp3",
+    "title": "Black And Yellow",
+    "artist": "Wiz Khalifa",
+    "enabled": true
+  },
+  "show_views": true,
+  "show_spotify": true,
+  "show_discord_presence": true
+}
